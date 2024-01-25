@@ -1,0 +1,10 @@
+server {
+    listen 80;
+    server_name 54.157.181.13;
+
+    location /airbnb-onepage/ {
+        proxy_pass http://localhost:5000/airbnb-onepage/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
